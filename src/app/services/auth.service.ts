@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs';
+import { map, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -28,6 +28,13 @@ export class AuthService {
     return this.http.get(`${this.baseUrl}/user`);
   }
 
+  logout() {
+    return this.http.get(`${this.baseUrl}/logout`)
+      .pipe(tap(() => {
+        localStorage.removeItem('authUser')
+      }));
+  }
+
   getAuthUser() {
     return JSON.parse(localStorage.getItem('authUser') as string);
   }
@@ -37,9 +44,5 @@ export class AuthService {
       return true;
     }
     return false;
-  }
-
-  logout() {
-    localStorage.removeItem('authUser');
   }
 }
