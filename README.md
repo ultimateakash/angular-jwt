@@ -1,4 +1,6 @@
-# AngularJwt
+# JWT Authentication In Angular
+
+<p align="center"><img src="https://github.com/ultimateakash/angular-jwt/blob/master/src/assets/jwt-authentication-angular.png"></p>
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.6.
 

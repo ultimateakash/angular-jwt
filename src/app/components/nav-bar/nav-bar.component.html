@@ -1,0 +1,14 @@
+<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+  <a routerLink="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+    <span class="fs-4">Angular JWT</span>
+  </a>
+  <ul class="nav nav-pills">
+    <ng-container  *ngIf="authService.isLoggedIn; else loginBlock">
+      <li class="nav-item"><a href="javascript:;" (click)="handleLogout()" class="nav-link active">Logout</a></li>
+    </ng-container>
+    <ng-template #loginBlock>
+      <li class="nav-item"><a [routerLink]="['/']" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}" class="nav-link">Login</a></li>
+      <li class="nav-item"><a [routerLink]="['/register']" [routerLinkActive]="'active'" class="nav-link">Register</a></li>
+    </ng-template>
+  </ul>
+</header>
