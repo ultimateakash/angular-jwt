@@ -14,9 +14,9 @@ export class AuthService {
 
   login(data: any) {
     return this.http.post(`${this.baseUrl}/login`, data)
-      .pipe(map(user => {
-        localStorage.setItem('authUser', JSON.stringify(user));
-        return user;
+      .pipe(map(result => {
+        localStorage.setItem('authUser', JSON.stringify(result));
+        return result;
       }));
   }
 
