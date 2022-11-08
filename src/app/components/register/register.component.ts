@@ -33,7 +33,7 @@ export class RegisterComponent implements OnInit {
     this.isSubmitted = true;
     this.authService.register(this.registerForm.value).subscribe({
       next: (result) => {
-        this.router.navigate(['/login']).then(() => {
+        this.router.navigate(['/']).then(() => {
           this.toastr.success('Registration successful. Please login.');
         });
       },
