@@ -21,7 +21,7 @@ export class NavBarComponent implements OnInit {
   handleLogout() {
     this.authService.logout().subscribe({
       next: (result) => {
-        this.router.navigate(['/login']);
+        this.router.navigate(['/']);
       },
       error: (error) => {
         this.toastr.error(error);
